@@ -28,15 +28,19 @@ def enableYellow():
     switch('green', 'off')
     switch('red', 'off')   
     while True:
-        switch(color, 'on')
+        switch('yellow', 'on')
         sleep(1)
-        switch(color, 'off')
+        switch('yellow', 'off')
         sleep(1)
 
 def enableGreen():
     switch('green', 'on')
     switch('yellow', 'off')
     switch('red', 'off')
+
+switch('green', 'off')
+switch('yellow', 'off')
+switch('red', 'off')
 
 proc = multiprocessing.Process(target=enableYellow, args=())
 proc.start()

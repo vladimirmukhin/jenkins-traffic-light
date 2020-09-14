@@ -59,15 +59,18 @@ while (True):
         proc.start()
     elif build_info['result'] == 'SUCCESS':
         color = 'green'
-        proc.terminate()
+        if proc:
+            proc.terminate()
         enableGreen()
     elif build_info['result'] == 'FAILURE':
         color = 'red'
-        proc.terminate()
+        if proc:
+            proc.terminate()
         enableRed()
     elif build_info['result'] == 'ABORTED':
         color = red
-        proc.terminate()
+        if proc:
+            proc.terminate()
         enableRed()
 
     print('\033c')

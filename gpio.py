@@ -19,7 +19,6 @@ def blink(color):
         sleep(1)
         switch('yellow', 'off')
         sleep(1)
-        global stop_threads
         if stop_threads: 
             break
 
@@ -56,5 +55,5 @@ def enableGreen():
     switch('yellow', 'off')
     switch('red', 'off')
 
-stop_threads = False
+global stop_threads = False
 enableYellow()

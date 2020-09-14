@@ -18,10 +18,6 @@ def switch(color, mode):
 
     GPIO.setup(pin, GPIO.OUT, initial=mode)
 
-while True:
-    switch('red','on')
-    switch('red','off')
-
 def enableRed():
     switch('green', 'off')
     switch('yellow', 'off')
@@ -37,7 +33,7 @@ def enableGreen():
     switch('yellow', 'off')
     switch('red', 'off')
 
-While True:
+while True:
     enableGreen()
     sleep(1)
     enableYellow()

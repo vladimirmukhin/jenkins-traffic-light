@@ -5,7 +5,6 @@ from termcolor import colored, cprint
 from time import sleep
 from os import getenv
 import RPi.GPIO as GPIO
-import multiprocessing
 
 def switch(color, mode):
     if color == 'red':

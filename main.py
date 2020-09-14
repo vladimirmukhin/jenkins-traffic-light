@@ -3,8 +3,13 @@
 import jenkins
 from termcolor import colored, cprint
 from time import sleep
+from os import getenv
 
-server = jenkins.Jenkins('http://localhost:8080', username='admin', password='123456')
+jenkins_url      = getenv('JENKINS_URL')
+jenkins_username = getenv('JENKINS_USERNAME')
+jenkins_password = getenv('JENKINS_PASSWORD')
+
+server = jenkins.Jenkins(jenkins_url, username=jenkins_username, password=jenkins_password)
 
 while (True):
     job_info = server.get_job_info('store-dev')

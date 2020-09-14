@@ -25,18 +25,16 @@ def enableRed():
     
 def enableYellow():
     switch('green', 'off')
-    switch('yellow', 'on')
     switch('red', 'off')
+    while True:
+        switch('yellow', 'on')
+        sleep(1)
+        switch('yellow', 'off')
+        sleep(1)
 
 def enableGreen():
     switch('green', 'on')
     switch('yellow', 'off')
     switch('red', 'off')
 
-while True:
-    enableGreen()
-    sleep(1)
-    enableYellow()
-    sleep(1)
-    enableRed()
-    sleep(1)
+enableYellow()

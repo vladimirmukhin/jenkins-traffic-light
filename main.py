@@ -26,6 +26,8 @@ jenkins_url      = getenv('JENKINS_URL')
 jenkins_username = getenv('JENKINS_USERNAME')
 jenkins_password = getenv('JENKINS_PASSWORD')
 
+GPIO.setmode(GPIO.BOARD)
+
 server = jenkins.Jenkins(jenkins_url, username=jenkins_username, password=jenkins_password)
 
 while (True):
@@ -53,5 +55,5 @@ while (True):
 
     #enable required color
     switch(color,'on')
-    
+
     sleep(4)

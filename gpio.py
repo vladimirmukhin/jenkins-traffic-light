@@ -56,4 +56,5 @@ def enableGreen():
     switch('yellow', 'off')
     switch('red', 'off')
 
+stop_threads = False
 enableYellow()

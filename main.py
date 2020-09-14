@@ -6,8 +6,6 @@ from time import sleep
 
 server = jenkins.Jenkins('http://localhost:8080', username='admin', password='123456')
 
-
-
 while (True):
     job_info = server.get_job_info('store-dev')
     build_info = server.get_build_info('store-dev', job_info["lastBuild"]["number"])

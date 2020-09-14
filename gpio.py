@@ -21,3 +21,26 @@ def switch(color, mode):
 while True:
     switch('red','on')
     switch('red','off')
+
+def enableRed():
+    switch('green', 'off')
+    switch('yellow', 'off')
+    switch('red', 'on')
+    
+def enableYellow():
+    switch('green', 'off')
+    switch('yellow', 'on')
+    switch('red', 'off')
+
+def enableGreen():
+    switch('green', 'on')
+    switch('yellow', 'off')
+    switch('red', 'off')
+
+While True:
+    enableGreen()
+    sleep(1)
+    enableYellow()
+    sleep(1)
+    enableRed()
+    sleep(1)

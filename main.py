@@ -16,12 +16,12 @@ server = jenkins.Jenkins(jenkins_url, username=jenkins_username, password=jenkin
 while (True):
     job_info = server.get_job_info('store-dev')
     build_info = server.get_build_info('store-dev', job_info["lastBuild"]["number"])
-    
+    proc = multiprocessing.Process(target=enableYellow, args=())
+
     if build_info['building'] == True:
         color = 'yellow'
         build_info['result'] = 'IN PROGRESS'
         #blink yellow
-        proc = multiprocessing.Process(target=enableYellow, args=())
         proc.start()
     elif build_info['result'] == 'SUCCESS':
         color = 'green'

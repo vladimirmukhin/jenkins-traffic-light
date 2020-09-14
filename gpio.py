@@ -39,9 +39,6 @@ def enableYellow():
     switch('red', 'off')    
     t1 = threading.Thread(target = blink('yellow')) 
     t1.start() 
-    time.sleep(10) 
-    stop_threads = True
-    t1.join() 
 
 def enableGreen():
     switch('green', 'on')
@@ -50,3 +47,5 @@ def enableGreen():
 
 stop_threads = False
 enableYellow()
+time.sleep(10) 
+stop_threads = True
